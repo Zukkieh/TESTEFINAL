@@ -1,0 +1,28 @@
+#root {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+aside button {
+    border-style: solid;
+    border-radius: 7px;
+    border-width: 1px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 1px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 50%;
+    margin: 0 0 0 100px;
+}
