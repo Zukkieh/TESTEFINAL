@@ -3,11 +3,11 @@ import { persist, thunk } from 'easy-peasy';
 import api from '../../../services/api';
 
 export default {
-    people: persist({
-        people: [],
-        setPeople: thunk(async (actions, payload, { getState }) => {
+    repos: persist({
+        repos: [],
+        setRepos: thunk(async (actions, payload, { getState }) => {
             const repos = await api.get('users/Zukkieh/repos');
-            getState().people = repos.data;
+            getState().repos = repos.data;
           })
     })
 };

@@ -3,24 +3,24 @@ import { useStoreActions, useStoreState } from 'easy-peasy';
 
 const ApiIntegration = () => {
 
-    const people = useStoreState(state => state.peopleModel.people.people);
-    const setPeople = useStoreActions(state => state.peopleModel.people.setPeople);
+    const repos = useStoreState(state => state.reposModel.repos.repos);
+    const setRepos = useStoreActions(state => state.reposModel.repos.setRepos);
 
-    console.log(people)
-
+    
     useEffect(() => {
-        if(!people.length)
-            setPeople();
-    }, [])
+        console.log(repos)
+        if(!repos.length)
+            setRepos();
+    }, [repos, setRepos])
 
     return (
         <>
             <div>
-                <button onClick={() => setPeople()}>Refresh</button>
+                <button onClick={() => setRepos()}>Refresh</button>
             </div>
             <div style={{display: 'flex', flexDirection: 'column'}}>
                 {
-                    people.length !== 0 && people.map((person, index) => (
+                    repos.length !== 0 && repos.map((person, index) => (
                         <span key={index}>
                             {person.name}
                         </span>
